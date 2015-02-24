@@ -1,0 +1,13 @@
+# Site settings
+title: Tomato's blog
+email: tomato.sliu@gmail.com
+description: > # This is tomato's blog.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  Toomatoo
+
+# Build settings
+markdown: kramdown
+
+encoding: UTF-8
