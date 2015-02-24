@@ -39,6 +39,10 @@ categories: jekyll update
 2. 搭建到github pages
 
 	http://theloverz.me/tutorials/2013/08/24/use-github-and-jekyll-to-establish-blog/
+	
+	我现在所用的方法仍然是github repository的setting中直接启动autopage，然后修改其内容。
+	而这里的效果是需要我本地build，然后push。应该并不是Github和Jekyll配合的初衷。
 
 
-
+## 定制Jekyll
+1. myblog/index.html, myblog/_includes, myblog/_layouts都是template。网站据此生成调用它们（footer，header）的完整页面。

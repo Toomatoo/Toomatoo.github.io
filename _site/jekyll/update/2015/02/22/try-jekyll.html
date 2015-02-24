@@ -103,9 +103,16 @@
     <p>搭建到github pages</p>
 
     <p>http://theloverz.me/tutorials/2013/08/24/use-github-and-jekyll-to-establish-blog/</p>
+
+    <p>我现在所用的方法仍然是github repository的setting中直接启动autopage，然后修改其内容。
+ 而这里的效果是需要我本地build，然后push。应该并不是Github和Jekyll配合的初衷。</p>
   </li>
 </ol>
 
+<h2 id="jekyll-2">定制Jekyll</h2>
+<ol>
+  <li>myblog/index.html, myblog/_includes, myblog/_layouts都是template。网站据此生成调用它们（footer，header）的完整页面。</li>
+</ol>
 
   </div>
 
@@ -123,7 +130,7 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>Tomato's blog</li>
+          <!-- <li>Tomato's blog</li> -->
           <li><a href="mailto:tomato.sliu@gmail.com">tomato.sliu@gmail.com</a></li>
         </ul>
       </div>
