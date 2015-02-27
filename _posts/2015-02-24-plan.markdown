@@ -15,6 +15,7 @@ categories: jekyll update
 #### 计算机
 
 1. POJ代码
+2. 学习开源项目的源码
 2. 毕设的初期工作
 3. Jekyll博客的搭建
 
