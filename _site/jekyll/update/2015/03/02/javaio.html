@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>学习计划</title>
-  <meta name="description" content="2015寒假">
+  <title>学习Java IO</title>
+  <meta name="description" content="java.io是一个主要的package，但是并不是所有的IO classes都在这里面。其中只包含file，network stream 还有memory的读写。更多复杂的网络读写，还需要使用别的package。比如网络读写，需要使用socket的内容先打开连接，然后使用IO package进行读写。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/02/24/plan.html">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/03/02/javaio.html">
   <link rel="alternate" type="application/rss+xml" title="Tomato's blog" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,27 +57,44 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">学习计划</h1>
-    <p class="post-meta"><time datetime="2015-02-24T00:00:00+08:00" itemprop="datePublished">Feb 24, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">学习Java IO</h1>
+    <p class="post-meta"><time datetime="2015-03-02T00:00:00+08:00" itemprop="datePublished">Mar 2, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="section">2015寒假</h2>
+    <p>java.io是一个主要的package，但是并不是所有的IO classes都在这里面。其中只包含file，network stream 还有memory的读写。更多复杂的网络读写，还需要使用别的package。比如网络读写，需要使用socket的内容先打开连接，然后使用IO package进行读写。</p>
 
-<h4 id="section-1">计算机</h4>
+<p>Java IO分为两组，Steam和Reader/Writer。一个是字节流，一个是字符流。这两种方法可以相互转换，比如，InputStreamReader，OutputStreamWriter。</p>
+
+<p>返回来，InputStream/OutputStream和Reader/Writer都是基本类型，叫节点型，另外在基础上进行封装，可以形成处理型，比如BuffferedInputStream，BufferedWriter。这样不仅继承了原来的方法，还有更多的方法，比如readLine。</p>
+
+<p>其实处理型还可以出现更加复杂的情况。比如一个输入原始节点型是InputStream，我们怎么得到一个非常好用的Reader呢。我们可以这样：</p>
+
+<p>InputStream -&gt; InputStreamReader -&gt; BufferedReader</p>
+
+<p>Java还构建了更方便的IO：</p>
 
 <ol>
-  <li>POJ代码</li>
-  <li>学习开源项目的源码</li>
-  <li>毕设的初期工作</li>
-  <li>Jekyll博客的搭建</li>
+  <li>
+    <p>当我们想要按一些特定的类型进行读写的时候，便需要使用DataInputStream等。</p>
+  </li>
+  <li>
+    <p>上面第一条的DataInputStream只是对基本类型的，比如Double, Integer等等，如果是复杂一点的数据类型，可以是ByteArrayInputstream，是从一个Byte Array中读内容；ByteArrayOutputStream，是讲一些内容写入到一个Byte Array中（内存会自动分配一些内容，或者程序自己指定大小）。（注意Array肯定是先入先出的）。而这里可以复杂一点，可以将这个Byte Array转化为一个复杂好用的Array：</p>
+  </li>
 </ol>
 
-<h4 id="section-2">其他</h4>
+<p>ByteArrayOutputStream -&gt; DataOutputStream</p>
+
+<p>这样每次读出的内容可以是一个任意的类型，而不是Byte这么底层的类型。</p>
 
 <ol>
-  <li>继续学习摄影的的东西</li>
-  <li>看一些小说</li>
+  <li>还有一类特殊的IO时Print，可以在Stream的外层构建PrintStream。这个Print IO的优点是没有异常的抛出，且自带flush，不需要手动进行。比如修改System.out的位置：</li>
+</ol>
+
+<p>FileOutputStream -&gt; PrintStream =&gt; System.setOut(PrintStream)</p>
+
+<ol>
+  <li>Object IO: 比如画图软件，保存，一些图形直接存在硬盘上了，使用Object IO。比如有一个class T。那么我们可以将一个T t写入文件：FileOutputStream -&gt; ObjectOutputStream。然后读出就是相反的过程。这个过程涉及writeObject，readObject这些方法。</li>
 </ol>
 
   </div>

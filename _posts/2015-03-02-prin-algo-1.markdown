@@ -1,3 +1,15 @@
+---
+
+layout: post
+
+title:  "Princeton Algorithm Week 1"
+
+date:   2015-03-02
+
+categories: jekyll update
+
+---
+
 今天学完了Coursera上Princeton的Algorithm的课程，第一周的课程主要包括一个入门问题的讲解-UnionFind-和算法复杂度介绍。
 
 ## Union-Find
