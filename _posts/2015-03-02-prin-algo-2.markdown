@@ -1,0 +1,57 @@
+---
+
+layout: post
+
+title: "Princeton ALgorithm Week 2"
+
+categories: jekyll update 
+
+---
+
+## Stack
+
+#### Link-List Implementation
+`Java Object Space`
+
+
+#### Array Implementation
+
+##### Size
+
+Resizing-array implementation
+
+if full add 1 ~ N^2
+
+if full: double the array;
+if one-quarter full: half the array
+
+If push N item in the resizing-array stack, it will call LogN times resize().
+
+
+## Queue
+
+Much similar with `Stack`
+
+##### Item - Generics
+
+###### Attempt 1: Casting
+
+StackofObjects stack;
+stack.push(new Apple());
+stack.push(new Pear());
+a = (Apple) stack.pop();
+
+###### Attempt 2: Generics
+
+public class Stack<Item> {
+}
+
+But Java does not allow creation of array:
+
+s = (Item[]) new Object[capacity];
+// the ugly cast
+
+And the casting aims at Objects, so the primitive data types are wrapped, like `int` to `Integer`.
+
+
+
