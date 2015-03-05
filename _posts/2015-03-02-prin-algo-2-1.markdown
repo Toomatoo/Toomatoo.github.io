@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "Princeton ALgorithm Week 2"
+title: "Princeton ALgorithm Week 2-1， Data Structure"
 
 categories: jekyll update 
 
@@ -142,3 +142,6 @@ Iterator包含hasNext, next, remove三个函数。
 	        }
 	    }
 	}
+	
+	
+
