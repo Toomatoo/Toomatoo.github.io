@@ -29,4 +29,11 @@ categories: jekyll update
 Next Step:
 	
 	1. 用stanford nlp构建Description Parsing
+		1.1 stanford parser是dependency的，研究一下标签的设置和API先运行起来
+		1.2 研究一下parser结果的数据结构，以供后面的使用
 	2. 规范化Image Parsing的数据，用stanford nlp尝试进行parsing
+		2.1 写一个脚本，能将所有的.dot文件转换为.conll文件
+		2.2 写一个小系统，转换.conll的表示为一个parsing tree
+		
+	
+	
