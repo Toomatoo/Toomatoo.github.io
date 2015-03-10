@@ -10,16 +10,34 @@ categories: jekll update
 # HTML
 
 1. doctype: tell the brower
-2. <title>: appear on the tab of the page
-3. <meta>: some characters
-4. <style>: css
-5. <h1>: mostly there is just one the one page
-6. <p>: html ignore more spaces and line breaks, and <br />can do the similar thing
-7. Formatting Text: <strong>, <em>, <u>, <strike>
-8. unordered list: <ul>, <li>
-9. ordered list: <ol>, <li>. Similar with the former but numerized.
-10. <img src="" width="100"/>: self-closed tag
-11. <form>:
+2. title
+		
+		<title>: appear on the tab of the page
+3. meta
+		
+		<meta>: some characters
+4. style
+
+		<style>: css
+5. header
+		
+		<h1>: mostly there is just one the one page
+6. paragraph
+		
+		<p>: html ignore more spaces and line breaks, and <br />can do the similar thing
+7. Formatting Text: 
+
+		<strong>, <em>, <u>, <strike>
+8. unordered list: 
+
+		<ul>, <li>
+9. ordered list: 
+
+		<ol>, <li>. Similar with the former but numerized.
+10. Image
+		
+		<img src="" width="100"/>: self-closed tag
+11. Form:
 
 		<form>
 			<input type="email" placeholder="" name ="email"/>
@@ -47,10 +65,11 @@ categories: jekll update
 			//	There is a question mark in the url, and the inputs also appear in the url (with its name)
 			//name is the param name and value  is its value or number.
 		</form>	
-12. <a href=""> </a>
+12. Link
 
-	<a name="top" />
-	<a href="#top" />
+		<a href=""> </a>
+		<a name="top" />
+		<a href="#top" />
 	
 13. Tables
 
