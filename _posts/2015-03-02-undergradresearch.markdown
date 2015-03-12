@@ -35,5 +35,25 @@ Next Step:
 		2.1 写一个脚本，能将所有的.dot文件转换为.conll文件
 		2.2 写一个小系统，转换.conll的表示为一个parsing tree
 		
+### Next Step - 3.9
+
+和张老师讨论以后，我们将我的毕设定位成检索系统的开发 - “基于依存分析的图片检索系统”。
+
+####本周
+1. 写好简单的Decription parsing的接口：
+
+		String -> Tree
+	
+2. 写好解析Image Parsing的接口：
+
+		.dot -> Tree
+
+3. 查看Query Parsing的部分:
+
+		TreeX/ML相似度
+		图相似度
+		
+
+
 	
 	

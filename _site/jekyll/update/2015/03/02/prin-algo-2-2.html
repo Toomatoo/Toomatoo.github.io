@@ -65,6 +65,36 @@
     <h2 id="interface-comparableitem">interface Comparable<item></item></h2>
 <p>int compareTo(Item item)</p>
 
+<p><code>implements Comparable&lt;item&gt;</code> 这个接口包含<code>int compareTo(Item item)</code></p>
+
+<pre><code>	-1: less than
+	0: equal
+	1: large than
+</code></pre>
+
+<p>目前使用<code>implements Comparable&lt;item&gt;</code>只是可以直接调用<code>compareTo</code>实现比较，但是相信在后面的sort里面可以直接应用从而排序一系列对象。</p>
+
+<h2 id="selection-sort">Selection Sort</h2>
+<p>从第一个开始，每次找后面序列中最小的一个交换到当前位。</p>
+
+<p>比较次数是N^2/2，交换次数是N。</p>
+
+<h2 id="insertion-sort">Insertion Sort</h2>
+<p>对于每一个元素，在前面已排序序列中找到正确的位置插入。</p>
+
+<p>Worst case &amp; Best case</p>
+
+<p>这里的做法是反向交换元素直到合适的位置停止。这样做，增加了一些交换的次数，因为相比直接插入而言，比较的次数是相同的。而直接插入需要数据结构的支持。</p>
+
+<h2 id="plus-application">Plus: Application</h2>
+
+<h3 id="shuffling">Shuffling</h3>
+<p>Random a list.</p>
+
+<p>对于每一个i位置的元素，产生1~i其中一个随机数r，交换元素i和r。这样结束可以拿到一个随意混乱的list。</p>
+
+<h3 id="convex-hull">Convex Hull</h3>
+
   </div>
 
 </article>

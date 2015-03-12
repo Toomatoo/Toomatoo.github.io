@@ -10,3 +10,32 @@ categories: jekyll update
 
 ## interface Comparable<Item>
 int compareTo(Item item)
+
+`implements Comparable<item>` 这个接口包含`int compareTo(Item item)`
+		
+		-1: less than
+		0: equal
+		1: large than
+
+目前使用`implements Comparable<item>`只是可以直接调用`compareTo`实现比较，但是相信在后面的sort里面可以直接应用从而排序一系列对象。
+
+## Selection Sort
+从第一个开始，每次找后面序列中最小的一个交换到当前位。
+
+比较次数是N^2/2，交换次数是N。
+
+## Insertion Sort
+对于每一个元素，在前面已排序序列中找到正确的位置插入。
+
+Worst case & Best case
+
+这里的做法是反向交换元素直到合适的位置停止。这样做，增加了一些交换的次数，因为相比直接插入而言，比较的次数是相同的。而直接插入需要数据结构的支持。
+
+## Plus: Application
+
+### Shuffling
+Random a list.
+
+对于每一个i位置的元素，产生1~i其中一个随机数r，交换元素i和r。这样结束可以拿到一个随意混乱的list。
+
+### Convex Hull
