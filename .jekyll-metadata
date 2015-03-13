@@ -143,7 +143,7 @@
   - /Users/sliu/Project/Toomatoo.github.io/_includes/footer.html
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/default.html
 /Users/sliu/Project/Toomatoo.github.io/_posts/2015-03-02-prin-algo-2-2.markdown:
-  mtime: 2015-03-11 22:45:38.000000000 +08:00
+  mtime: 2015-03-13 21:04:01.000000000 +08:00
   deps:
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/post.html
   - /Users/sliu/Project/Toomatoo.github.io/_includes/head.html
@@ -183,7 +183,7 @@
   - /Users/sliu/Project/Toomatoo.github.io/_includes/footer.html
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/default.html
 /Users/sliu/Project/Toomatoo.github.io/_posts/2015-03-10-css.markdown:
-  mtime: 2015-03-13 16:53:05.000000000 +08:00
+  mtime: 2015-03-13 19:37:44.000000000 +08:00
   deps:
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/post.html
   - /Users/sliu/Project/Toomatoo.github.io/_includes/head.html
@@ -192,6 +192,14 @@
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/default.html
 /Users/sliu/Project/Toomatoo.github.io/_posts/2015-03-13-plan.markdown:
   mtime: 2015-03-13 19:32:54.000000000 +08:00
+  deps:
+  - /Users/sliu/Project/Toomatoo.github.io/_layouts/post.html
+  - /Users/sliu/Project/Toomatoo.github.io/_includes/head.html
+  - /Users/sliu/Project/Toomatoo.github.io/_includes/header.html
+  - /Users/sliu/Project/Toomatoo.github.io/_includes/footer.html
+  - /Users/sliu/Project/Toomatoo.github.io/_layouts/default.html
+/Users/sliu/Project/Toomatoo.github.io/_posts/2015-03-13-javavm.md:
+  mtime: 2015-03-13 22:45:49.000000000 +08:00
   deps:
   - /Users/sliu/Project/Toomatoo.github.io/_layouts/post.html
   - /Users/sliu/Project/Toomatoo.github.io/_includes/head.html

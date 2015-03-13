@@ -86,6 +86,13 @@
 
 <p>这里的做法是反向交换元素直到合适的位置停止。这样做，增加了一些交换的次数，因为相比直接插入而言，比较的次数是相同的。而直接插入需要数据结构的支持。</p>
 
+<h2 id="shellsort">Shellsort</h2>
+<p>以一个increment array作为间隔，对数据进行排序。</p>
+
+<p>The worst case: N^(3/2)</p>
+
+<p>代码量小，是现在嵌入式系统中（序列的规模很小，算法比较效率）</p>
+
 <h2 id="plus-application">Plus: Application</h2>
 
 <h3 id="shuffling">Shuffling</h3>
@@ -94,6 +101,20 @@
 <p>对于每一个i位置的元素，产生1~i其中一个随机数r，交换元素i和r。这样结束可以拿到一个随意混乱的list。</p>
 
 <h3 id="convex-hull">Convex Hull</h3>
+<p>#### 一个问题的解决方案：</p>
+
+<ol>
+  <li>找到一个切入点：x/y坐标最大（小）的一个点</li>
+  <li>推进：摆角排序</li>
+</ol>
+
+<h4 id="detail">Detail</h4>
+<ol>
+  <li>怎么找到最小的y坐标点</li>
+  <li>对摆角进行排序</li>
+  <li>a-&gt;b-&gt;c clockwise turn</li>
+</ol>
+
 
   </div>
 
