@@ -81,7 +81,24 @@ categories: jekll update
 		z-index:1; //纵坐标，控制层次关系
 	
 	
+6. Margin
 
+		margin:10px 20px 20px 40px; //Top Right Bottom Left
+		margin-left:200px
+
+7. Padding
+
+	In a div, how the words positioned?
+		
+		padding:10px;
+	p tags have default 10px paddings.
+
+		.box {
+			height:200px;
+			width:200px;
+			padding:10px;
+		}
+	Then the actual height is 220px, so the width is.
 
 
 

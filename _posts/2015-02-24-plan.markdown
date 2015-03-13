@@ -12,14 +12,17 @@ categories: jekyll update
 
 ## 2015寒假
 
-#### 计算机
+### MOOC
 
-1. POJ代码
-2. 学习开源项目的源码
-2. 毕设的初期工作
-3. Jekyll博客的搭建
+#### Recently:
 
-#### 其他
+1. Algorithm Part 1&2  `Coursera`
+2. Coding the Matrix: Linear Algebra through Computer Science Applications  `Coursera`
+3. An Introduction to Interactive Programming in Python  `Coursera`
+4. Introduction to Databases  `Coursera`
+5. Functional Programming in Scala `Coursera`
 
-1. 继续学习摄影的的东西
-2. 看一些小说
+#### Future:
+
+1. Introduction to Computational Thinking and Data Science  `edX`
+2. Engineering Software as a Service `edX`
