@@ -39,7 +39,7 @@ Next Step:
 
 和张老师讨论以后，我们将我的毕设定位成检索系统的开发 - “基于依存分析的图片检索系统”。
 
-####本周
+#### 本周
 1. 写好简单的Decription parsing的接口：
 
 		String -> Tree
@@ -53,7 +53,9 @@ Next Step:
 		TreeX/ML相似度
 		图相似度
 		
-
+#### 完成
+		
+1. Image / Description Parsing都完成了转换成conll或者直观的依存关系的文件。
 
 	
 	
