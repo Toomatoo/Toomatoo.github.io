@@ -67,8 +67,20 @@ Next Step:
 
 ### Next Step - 3.14
 
-1. 相似度计算
-2. 工程界面的搭建
+1. 查看把Parsing Tree转换成什么数据结构比较好
+	
+		Image Parsing的关系直接是位置关系；
+		Description/Query Parsing的关系是Dependency parsing的tag；
+		
+	查看一些资料和源代码，学习一下到底表示成什么数据结构比较好。
+
+2. 相似度计算
+
+		现在初步的想法是，由物体（Object）做初步索引，由关系（Dependency）做相似度计算的主体。
+		1. 先做直接匹配看看效果
+		2. 然后需要整合几个关系的综合考虑
+		
+3. 工程界面的搭建
 
 
 	
