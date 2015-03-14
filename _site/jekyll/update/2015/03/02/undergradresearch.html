@@ -117,7 +117,27 @@
 <h4 id="section-1">完成</h4>
 
 <ol>
-  <li>Image / Description Parsing都完成了转换成conll或者直观的依存关系的文件。</li>
+  <li>
+    <p>Image / Description Parsing都完成了转换成conll或者直观的依存关系的文件。</p>
+
+    <pre><code> Image Parsing: data/conll/
+ Decription Parsing: data/desc-parsed/ (sentences in data/description/)
+</code></pre>
+  </li>
+  <li>
+    <p>Query Parsing目前仍然使用Stanford nlp的parser。</p>
+
+    <pre><code> 我用stanford parser直接试着解析了我自己输入的一些query，发现：
+ 1. 如果有介词的，会被直接转换成一层关系表现在边上，这个词本身就去掉了
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="next-step---314">Next Step - 3.14</h3>
+
+<ol>
+  <li>相似度计算</li>
+  <li>工程界面的搭建</li>
 </ol>
 
 

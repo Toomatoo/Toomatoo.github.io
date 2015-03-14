@@ -57,5 +57,19 @@ Next Step:
 		
 1. Image / Description Parsing都完成了转换成conll或者直观的依存关系的文件。
 
+		Image Parsing: data/conll/
+		Decription Parsing: data/desc-parsed/ (sentences in data/description/)
+2. Query Parsing目前仍然使用Stanford nlp的parser。
+
+		我用stanford parser直接试着解析了我自己输入的一些query，发现：
+		1. 如果有介词的，会被直接转换成一层关系表现在边上，这个词本身就去掉了
+
+
+### Next Step - 3.14
+
+1. 相似度计算
+2. 工程界面的搭建
+
+
 	
 	
