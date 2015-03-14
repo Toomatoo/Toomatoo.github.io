@@ -4,7 +4,7 @@ layout: post
 
 title:  "毕业设计 Logging"
 
-date:   2015-03-02
+date:   2015-03-14
 
 categories: jekyll update
 
