@@ -115,6 +115,47 @@ JSP的实质是一个HTML page，但是它比较特殊，因为它可以内嵌Ja
   </li>
 </ol>
 
+<h2 id="webxml">1.5 Web.xml</h2>
+
+<p>Web.xml是控制Servlet URL的文件，编程者可以根据Web.xml的设置，个性化设置各个页面的url。</p>
+
+<p>这个文件的内容是这样的：</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5"&gt;
+  &lt;display-name&gt;TestWebXML&lt;/display-name&gt;
+  
+  &lt;welcome-file-list&gt;
+    &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;index.htm&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;default.html&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;default.htm&lt;/welcome-file&gt;
+    &lt;welcome-file&gt;default.jsp&lt;/welcome-file&gt;
+  &lt;/welcome-file-list&gt;
+  
+  &lt;servlet&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;display-name&gt;Hello&lt;/display-name&gt;
+    &lt;servlet-name&gt;Hello&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;demo.hello.Hello&lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;Hello&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/Hello&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+
+<p>可以看到welcome-file-list是关于index的。</p>
+
+<p>servlet tag是关于一个servlet的的url设置。
+<code>servlet-name</code>是这个servlet的class name
+<code>servlet-class</code>是这个class的地址</p>
+
+<p>servlet-mapping tag是关于实际的url mapping。
+<code>url-pattern</code>是url的一个正则表达式。</p>
+
 
   </div>
 
