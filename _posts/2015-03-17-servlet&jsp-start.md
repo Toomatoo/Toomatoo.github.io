@@ -92,3 +92,21 @@ servlet tag是关于一个servlet的的url设置。
 servlet-mapping tag是关于实际的url mapping。
 `url-pattern`是url的一个正则表达式。
 
+如果我们写了一个JSP，想要构建新的url给这个page的话，我们该怎么修改Web.xml呢？
+
+类似地，我们构建一组tag：
+
+	  <servlet>
+	    <description></description>
+	    <display-name>Hello</display-name>
+	    <servlet-name>Hello</servlet-name>
+	    <jsp-file>/some.jsp</jsp-file>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>Hello</servlet-name>
+	    <url-pattern>/Hello</url-pattern>
+	  </servlet-mapping>
+
+## 1.6 Deployment
+
+本节，我学习如果将一个Dynamic Web Project部署在网络上。
