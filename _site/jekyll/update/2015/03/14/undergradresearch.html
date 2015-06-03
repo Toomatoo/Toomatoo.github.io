@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>毕业设计 Logging</title>
+  <title>毕业设计 计划</title>
   <meta name="description" content="tools:">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -57,7 +57,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">毕业设计 Logging</h1>
+    <h1 class="post-title" itemprop="name headline">毕业设计 计划</h1>
     <p class="post-meta"><time datetime="2015-03-14T00:00:00+08:00" itemprop="datePublished">Mar 14, 2015</time></p>
   </header>
 
@@ -158,6 +158,53 @@
   </li>
 </ol>
 
+<h3 id="project---324">Project - 3.24</h3>
+
+<h4 id="section-2">工程流程</h4>
+
+<pre><code>index.jsp 输入 query
+index.jsp转入result.jsp页面
+</code></pre>
+
+<p>现在需要返回ArrayList<string>的一组图片地址，用于result的显示。</string></p>
+
+<h5 id="similarity-no1">Similarity No.1</h5>
+
+<pre><code>1. 物体直接匹配：找到候选集
+2. 直接按关系对进行匹配
+</code></pre>
+
+<h5 id="similarity-no2">Similarity No.2</h5>
+
+<pre><code>1. 找出所有的关系对（N-R-N）
+2. 查找相同的内容
+</code></pre>
+
+<h3 id="next-step---412">Next Step - 4.12</h3>
+
+<ol>
+  <li>
+    <p>生成Dependency Parsing Tree</p>
+
+    <p>query和image都只有一棵树，description可能是多棵树。</p>
+  </li>
+  <li>
+    <p>运用子树覆盖来找到两个物体的所有关系</p>
+
+    <p>考虑
+ 1. query和image依存树的比较
+ 2. query和description每个子树的比较</p>
+  </li>
+  <li>
+    <p>推理过程</p>
+
+    <ol>
+      <li>寻找子树：覆盖所有object</li>
+      <li>推导子树中这一对object的所有关系：第一个共同父节点左右路线上的关系都是他们的关系</li>
+      <li>面对每一个关系应该有不同的评分（因为上面的“所有关系”可能很多）</li>
+    </ol>
+  </li>
+</ol>
 
   </div>
 

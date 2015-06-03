@@ -107,6 +107,7 @@ servlet-mapping tag是关于实际的url mapping。
 	    <url-pattern>/Hello</url-pattern>
 	  </servlet-mapping>
 
+<b>这里在web.xml中设置的url是相对application的url，如果我们在别的地方forward或者redirect，那么需要使用除了hostname的其他所有内容</b>
 ## 1.6 Deployment
 
 本节，我学习如果将一个Dynamic Web Project部署在网络上。

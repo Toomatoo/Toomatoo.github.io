@@ -19,6 +19,13 @@ int compareTo(Item item)
 
 目前使用`implements Comparable<item>`只是可以直接调用`compareTo`实现比较，但是相信在后面的sort里面可以直接应用从而排序一系列对象。
 
+## interface Comparator<Item>
+
+有的Class是我们不能设计的，不能修改的。那么我们无法Implement Comparable。这个时候，我们还是需要比较或者排序的，那么我们该怎么办呢。
+
+这时候Java中有一个新的interface Comparator。他允许你作为第三者比较Item。其中需要实现的API有 `int compara(Item t1, Item t2)`.
+
+
 ## Selection Sort
 从第一个开始，每次找后面序列中最小的一个交换到当前位。
 
@@ -58,3 +65,13 @@ Random a list.
 3. a->b->c clockwise turn
 
 	
+## 比较排序算法
+
+1. Selection：需要较少的交换次数 N
+2. Insertion：对于partially sorted的序列更好用
+
+## 练习题
+
+1. 4个数，最少可以用5次比较排序
+2. 5个数，最少可以用9次比较排序
+3. 6个数，最少可以用12次比较排序

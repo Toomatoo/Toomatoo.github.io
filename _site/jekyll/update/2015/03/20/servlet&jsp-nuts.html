@@ -72,9 +72,9 @@
 
 <p>比如我们如果想要import一个类供后面的Java code使用，那么：</p>
 
-<pre><code>	&lt;%@ page import="java.util.Data, anouther pacage"%&gt;
+<pre><code>&lt;%@ page import="java.util.Data, anouther pacage"%&gt;
 	
-	&lt;%= new Data() %&gt;
+&lt;%= new Data() %&gt;
 </code></pre>
 
 <h2 id="getting-url-parameters">2.2 Getting URL parameters</h2>
@@ -116,6 +116,64 @@ This is a JSP loop.
 </code></pre>
 
 <p>这里说的有条件，就是比如嵌入java code，<code>if...else...</code>·那么就需要使用<code>jsp:inclde</code> tag.</p>
+
+<h2 id="forwarding-and-redirecting">2.5 Forwarding and Redirecting</h2>
+
+<h3 id="forward">Forward</h3>
+<p>进入一个JSP以后，如果我们想显示另外一个JSP，也就是Forward，那么我们可以：</p>
+
+<pre><code>&lt;jsp:forward page="some.jsp"&gt; &lt;/jsp:forward&gt;
+</code></pre>
+
+<p>这样做完以后，我们的url还是显示最初的url访问。</p>
+
+<p>另一种方法是：</p>
+
+<pre><code>&lt;% 
+request.getRequestDispatcher("some.jsp").forward(request, response);
+%&gt;
+</code></pre>
+
+<h3 id="redirect">Redirect</h3>
+
+<p>我们还可以重定向：</p>
+
+<pre><code>&lt;% 
+response.sendRedirect("some.jsp")
+%&gt;
+</code></pre>
+
+<p>两者的区别是，Forward是重写内容，发现url未变，Redirect是直接指向另一个页面，url变成了重定向的页面的url。</p>
+
+<p><b>并且Redirect的request已经被重置了，如果需要Parameter，需要自己加入</b>。</p>
+
+<h2 id="declaration-tag">2.6 Declaration Tag</h2>
+
+<p><code>jsp:scriptlet</code> (<code>&lt;% %&gt;</code>)中定义的变量只能是final，也就是只读变量。如果想要自由地定义java变量，那么需要Declaration Tag：</p>
+
+<pre><code>&lt;%!
+private String name = "Jack";
+%&gt;
+
+&lt;%= name %&gt;
+</code></pre>
+
+<p>=========
+<code>Small Cake</code></p>
+
+<ol>
+  <li>使用Tomcat 8以后显示 <code>The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build</code>。之后我手动修改properties中targeted runtime，解决了问题。</li>
+</ol>
+
+<h2 id="architecture-models">2.7 Architecture Models</h2>
+
+<p>除了正常的使用JSP相互link跳转以外。现在主要的一种Model是使用MVC。</p>
+
+<p>比如简单的页面跳转，我们在JSP中可以写主要的页面显示的内容。而跳转时，可以构建Contorller Servlet，动态地确定跳转的目的地。</p>
+
+<h2 id="jar-files">2.8 Jar Files</h2>
+
+<p>一个工程需要的jar可以直接放在<code>/WebContent/WEB-INF/lib</code>中。</p>
 
   </div>
 

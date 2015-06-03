@@ -20,9 +20,9 @@ categories: jekyll update
 
 比如我们如果想要import一个类供后面的Java code使用，那么：
 
-		<%@ page import="java.util.Data, anouther pacage"%>
+	<%@ page import="java.util.Data, anouther pacage"%>
 		
-		<%= new Data() %>
+	<%= new Data() %>
 
 ## 2.2 Getting URL parameters
 
@@ -61,3 +61,56 @@ categories: jekyll update
 	<jsp:include page="somepage.html"/>
 		
 这里说的有条件，就是比如嵌入java code，`if...else...`·那么就需要使用`jsp:inclde` tag.
+
+## 2.5 Forwarding and Redirecting
+
+### Forward
+进入一个JSP以后，如果我们想显示另外一个JSP，也就是Forward，那么我们可以：
+
+	<jsp:forward page="some.jsp"> </jsp:forward>
+	
+这样做完以后，我们的url还是显示最初的url访问。
+
+另一种方法是：
+
+	<% 
+	request.getRequestDispatcher("some.jsp").forward(request, response);
+	%>
+
+### Redirect
+
+我们还可以重定向：
+
+	<% 
+	response.sendRedirect("some.jsp")
+	%>
+	
+
+两者的区别是，Forward是重写内容，发现url未变，Redirect是直接指向另一个页面，url变成了重定向的页面的url。
+
+<b>并且Redirect的request已经被重置了，如果需要Parameter，需要自己加入</b>。
+
+## 2.6 Declaration Tag
+
+`jsp:scriptlet` (`<% %>`)中定义的变量只能是final，也就是只读变量。如果想要自由地定义java变量，那么需要Declaration Tag：
+
+	<%!
+	private String name = "Jack";
+	%>
+
+	<%= name %>
+
+=========
+`Small Cake`
+
+1. 使用Tomcat 8以后显示 `The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build`。之后我手动修改properties中targeted runtime，解决了问题。
+
+## 2.7 Architecture Models
+
+除了正常的使用JSP相互link跳转以外。现在主要的一种Model是使用MVC。
+
+比如简单的页面跳转，我们在JSP中可以写主要的页面显示的内容。而跳转时，可以构建Contorller Servlet，动态地确定跳转的目的地。
+
+##2.8 Jar Files
+
+一个工程需要的jar可以直接放在`/WebContent/WEB-INF/lib`中。

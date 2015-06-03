@@ -2,7 +2,7 @@
 
 layout: post
 
-title:  "毕业设计 Logging"
+title:  "毕业设计 计划"
 
 date:   2015-03-14
 
@@ -83,5 +83,40 @@ Next Step:
 3. 工程界面的搭建
 
 
+### Project - 3.24
+
+#### 工程流程
+
+	index.jsp 输入 query
+	index.jsp转入result.jsp页面
+
+现在需要返回ArrayList<String>的一组图片地址，用于result的显示。
+
+##### Similarity No.1
+
+	1. 物体直接匹配：找到候选集
+	2. 直接按关系对进行匹配
 	
+##### Similarity No.2
+
+	1. 找出所有的关系对（N-R-N）
+	2. 查找相同的内容
 	
+
+### Next Step - 4.12
+
+1. 生成Dependency Parsing Tree
+	
+	query和image都只有一棵树，description可能是多棵树。
+	
+2. 运用子树覆盖来找到两个物体的所有关系
+
+	考虑
+	1. query和image依存树的比较
+	2. query和description每个子树的比较
+
+3. 推理过程
+
+	1. 寻找子树：覆盖所有object
+	2. 推导子树中这一对object的所有关系：第一个共同父节点左右路线上的关系都是他们的关系
+	3. 面对每一个关系应该有不同的评分（因为上面的“所有关系”可能很多）

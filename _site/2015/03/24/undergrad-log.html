@@ -1,0 +1,55 @@
+<p>`—</p>
+
+<p>layout: post</p>
+
+<p>title:  “毕业设计 Log”</p>
+
+<p>date:   2015-03-24</p>
+
+<p>categories: jekyll update</p>
+
+<hr />
+
+<ol>
+  <li>bootstrap里面有的直接写了js，干涉dispatch的内容</li>
+  <li>stanford: </li>
+</ol>
+
+<p><code>java.lang.ClassNotFoundException: edu.stanford.nlp.trees.TreebankLanguagePack</code></p>
+
+<p>直接在Object里的main中启动，<code>edu.stanford.nlp.trees.TreebankLanguagePack</code>可以找到，但是如果放在jsp中直接启动，便显示找不到。</p>
+
+<p><b>Solution</b>
+servlet或者别的class import的jar，必须放在WEB-INF/lib下</p>
+
+<ol>
+  <li>Stanford parser:</li>
+</ol>
+
+<p>Collection 直接跳走：</p>
+
+<pre><code>Tree parse = lp.parse(query);
+GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
+//Collection&lt;TypedDependency&gt; tdl = gs.typedDependenciesCCprocessed();
+Collection&lt;TypedDependency&gt; tdl = null;// = gs.typedDependenciesCollapsedTree();
+Iterator&lt;TypedDependency&gt; iterator = tdl.iterator();
+	
+while(iterator.hasNext()) {
+	TypedDependency dependency = (TypedDependency) iterator.next();
+	System.out.println(dependency);
+}
+</code></pre>
+
+<p>转投Intelli IDEA解决</p>
+
+<ol>
+  <li>split(“.”)</li>
+</ol>
+
+<p>.是正则表达式的公式，所以这里是错误的</p>
+
+<p><b>Solution</b></p>
+
+<p><code>split("\\.")</code></p>
+
+<p>类似的还有”()” <code>split("[\\(||\\)]")</code></p>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>学习计划</title>
-  <meta name="description" content="2015寒假">
+  <title>学习Java Servlet&JSP Nuts and Bolts</title>
+  <meta name="description" content="3.1&amp;3.2 JSP Beans">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/03/16/plan.html">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/03/24/servlet&jsp-beansforms.html">
   <link rel="alternate" type="application/rss+xml" title="Tomato's blog" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,26 +57,44 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">学习计划</h1>
-    <p class="post-meta"><time datetime="2015-03-16T00:00:00+08:00" itemprop="datePublished">Mar 16, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">学习Java Servlet&JSP Nuts and Bolts</h1>
+    <p class="post-meta"><time datetime="2015-03-24T00:00:00+08:00" itemprop="datePublished">Mar 24, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="section">2015寒假</h2>
+    <h2 id="jsp-beans">3.1&amp;3.2 JSP Beans</h2>
 
-<h3 id="mooc">MOOC</h3>
+<p>Bean是一个单独的类（并不是Servlet）。它主要用于存储数据等活动。
+我们可以使用<code>&lt;jsp:useBean&gt;</code> tag来调用一个bean或者创建一个新的bean。</p>
 
-<h4 id="recently">Recently:</h4>
+<p>其中有一些这个tag的attributtion：</p>
 
-<ol>
-  <li>Algorithm Part 2  <code>Coursera</code></li>
-  <li>Structure and Interpretation of Computer Programs <code>Berkeley</code> - Mon Tues</li>
-  <li>
-    <p>Introduction to Databases  <code>Coursera</code> - Wed Thurs
-#### Future:</p>
-  </li>
-  <li>Engineering Software as a Service <code>edX</code></li>
-</ol>
+<pre><code>id="ID": 是这个bean专属的名字，用于检索到这个bean
+class="package.Class": 这bean定义的类
+scope="session|request|page|application": 表示这个bean的使用范围，定义尚未弄明白。
+	session: 和cookie相关，在10分钟内打开仍然可以访问
+	page: 只能在当前页面中使用
+	request: 只能在当前request下使用，如果发送了request之后，这个bean就失效了。forward可以，redirect不可以。
+	application: along with application existing
+</code></pre>
+
+<h2 id="setting-bean-properties-using-parameters">3.3 Setting Bean Properties using parameters</h2>
+
+<p>之前我们使用<code>jsp:setProperty</code> tag，我们可以使用attributes: <code>name</code>, <code>property</code>, <code>value</code>来单独设置某一个bean的某个property的值。</p>
+
+<p>现在我们想要更加灵活地设置这些properties，比如我们想取出URL中parameter的值，作为某一个bean的内容，我们该怎么做呢。</p>
+
+<p>同样使用<code>jsp:setProperty</code>,不过我们不使用value，而是使用parameter这个attribute：</p>
+
+<pre><code>&lt;jsp:setProperty name="user" property="email" param="email"&gt;&lt;/jsp:setProperty&gt;
+</code></pre>
+
+<p>这样我们就可以取出URL变量email的值了。比如这个url：<code>localhost/index?email=111@qq.com</code></p>
+
+<p>更进一步，我们可以让bean的所有property自动匹配url中parameters：</p>
+
+<pre><code>&lt;jsp:setProperty name="user" property="*"&gt;&lt;/jsp:setProperty&gt;
+</code></pre>
 
   </div>
 

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Princeton ALgorithm 2 Week 1, Undirected Graph</title>
-  <meta name="description" content="1. 图中的问题">
+  <title>Vim</title>
+  <meta name="description" content="  在当前Vim中使用Shell Commands">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/03/02/prin-algo2-1-1.html">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/03/31/emacs.html">
   <link rel="alternate" type="application/rss+xml" title="Tomato's blog" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,47 +57,22 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Princeton ALgorithm 2 Week 1, Undirected Graph</h1>
-    <p class="post-meta"><time datetime="2015-03-02T00:00:00+08:00" itemprop="datePublished">Mar 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">Vim</h1>
+    <p class="post-meta"><time datetime="2015-03-31T00:00:00+08:00" itemprop="datePublished">Mar 31, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="section">1. 图中的问题</h2>
-
-<h2 id="section-1">2. 图的表示</h2>
-
-<ol>
+    <ol>
   <li>
-    <p>List of edges</p>
-  </li>
-  <li>
-    <p>Adjacency Matrix </p>
+    <p>在当前Vim中使用Shell Commands</p>
 
-    <p>一般使用的矩阵存储。</p>
-  </li>
-  <li>
-    <p>Adjacency list</p>
+    <pre><code> a. 直接在Vim中启动shell：键入命令
+     :sh (退出可以输入exit，或者Ctrl-D)
+ b. 直接运行Shell Commands：输入命令
+     :! Shell_Command
+</code></pre>
   </li>
 </ol>
-
-<p>无论哪个思路的数据结构，都需要构建一组API以供访问这个数据结构。</p>
-
-<h2 id="section-2">3. 深度优先搜索</h2>
-
-<pre><code>Goal
-Abstracktion IDEA
-Design pattern：create, pass a routine, query routine
-</code></pre>
-
-<p>Design pattern: 先创建一个解决问题的对象，这样，我们首先思考需要什么操作，然后让操作形成一串，从而解决问题。</p>
-
-<h4 id="section-3">深度搜索的过程：</h4>
-
-<pre><code>从某一个起点入手，
-查看所有Adjacency
-	如果已经到达过了，那么不访问（这里有一个检查，需要一个数据结构）；
-	反之，进入访问，返回查看Adjacency步骤。
-</code></pre>
 
 
   </div>
