@@ -10,9 +10,22 @@ categories: jekyll update
 
 ---
 
-## June 2015
+## June-September 2015
 
-### Recently
+### 必做内容
 
 1. iOS Swift Development
+
+		每天至少一个视频
+		总结学到的关键点和技术
+	
 2. Daily LeetCode 
+
+		每天至少两道题
+
+
+### 选做内容
+
+1. 学习概率与统计课程
+2. 学习NLP的课程
+3. 学习Machine Learning的课程
