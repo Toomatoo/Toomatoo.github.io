@@ -1,3 +1,13 @@
+---
+
+layout: post
+
+title: "Vim"
+
+categories: jekyll update 
+
+---
+
 1. Comparable v.s. Comparator
 2. compile java file with jar package
 
