@@ -10,13 +10,13 @@ categories: jekyll update
 
 ---
 
-```
-<link rel="stylesheet" href="./stylesheets/highlightstyles/default.css">
-<script src="./javascripts/highlight.pack.js"></script>
+```html
+<link rel="stylesheet" href="/stylesheets/highlightstyles/default.css">
+<script src="/javascripts/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
-```
+```java
 <pre><code class="java">
 public class AddParenthese {
 	public List<Integer> diffWaysToCompute(String input) {
