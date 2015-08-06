@@ -20,7 +20,7 @@ categories: jekyll update
 
 <pre><code class="java">
 public class AddParenthese {
-	public List<Integer> diffWaysToCompute(String input) {
+  public List<Integer> diffWaysToCompute(String input) {
 		List<Integer> results = new ArrayList<Integer>();
 		for(int i=0; i<input.length(); i++) {
 			if(input.charAt(i) == '-'
