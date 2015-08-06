@@ -1,3 +1,13 @@
+---
+
+layout: post
+
+title: "UCSD入学须知笔记"
+
+categories: jekyll update 
+
+---
+
 # Immigration Basics
 
 ## Documents to enter U.S.

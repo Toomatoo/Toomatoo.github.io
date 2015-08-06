@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "Vim"
+title: "Java Compile/Run Errors"
 
 categories: jekyll update 
 

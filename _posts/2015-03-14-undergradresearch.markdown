@@ -4,8 +4,6 @@ layout: post
 
 title:  "毕业设计"
 
-date:   2015-03-14
-
 categories: jekyll update
 
 ---
