@@ -17,8 +17,6 @@ categories: jekyll update
 
 <script>hljs.initHighlightingOnLoad();</script>
 
-# Add Parentheses
-
 ### 算法分析
 
 题目要求是构建所有`添加括号`的办法，最后返回所有计算结果。
