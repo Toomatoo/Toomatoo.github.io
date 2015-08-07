@@ -43,8 +43,7 @@ categories: jekyll update
 
 ### 源代码
 
-<pre><code class="java">
-public class AddParenthese {
+<pre><code class="java">public class AddParenthese {
     public List<Integer> diffWaysToCompute(String input) {
         List<Integer> results = new ArrayList<Integer>();
         for(int i=0; i<input.length(); i++) {
