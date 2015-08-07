@@ -68,6 +68,36 @@
 
 <script>hljs.initHighlightingOnLoad();</script>
 
+<h1 id="add-parentheses">Add Parentheses</h1>
+
+<h3 id="section">算法分析</h3>
+
+<p>题目要求是构建所有<code>添加括号</code>的办法，最后返回所有计算结果。
+注意是添加括号的办法。</p>
+
+<p>很容易想到的办法是利用分治的办法递归地解决办法。而怎么划分子问题是最关键的问题。</p>
+
+<p>我首先想到的办法是两两合并运算数，但是最后实际是错误的。因为两两合并造成一个重大的问题：添加括号的办法实际是有重复出现的（比如前后独立合并时候，前后两次递归全都算过）</p>
+
+<p>我一开始想通过改进来解决这个问题，未遂。</p>
+
+<p>所以我转而学习别人的解决思路。</p>
+
+<p>划分子问题：用运算符将一个input String拆分。这样两边分而治之，且每种划分（顺序遍历所有的运算符）得到的括号分布是不可能相同的。</p>
+
+<p>解决子问题：对于每个input String，根据运算符划分成两个小规模input，分别得到两个input计算得到的<code>list</code>以后，利用划分时的运算符计算出所有结果。</p>
+
+<p>结束条件：此处的input无法划分，查找运算符的<code>for</code>循环没有实际内容，导致<code>result</code>中结果为空。</p>
+
+<h3 id="section-1">启示</h3>
+
+<ol>
+  <li>不要贸然构建数据结构，可能是多余的，可以直接input String分析</li>
+  <li>java中的switch，初始化要求等语法</li>
+</ol>
+
+<h3 id="section-2">源代码</h3>
+
 <pre><code class="java">
 public class AddParenthese {
     public List<integer> diffWaysToCompute(String input) {
