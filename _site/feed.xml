@@ -1,46 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tomato&#39;s blog</title>
-    <description></description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Feb 2015 00:02:34 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Feb 2015 00:02:34 +0800</lastBuildDate>
-    <generator>Jekyll v3.0.0-beta1</generator>
-    
-      <item>
-        <title>学习计划</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;2015寒假&lt;/h2&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;计算机&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;POJ代码&lt;/li&gt;
-  &lt;li&gt;毕设的初期工作&lt;/li&gt;
-  &lt;li&gt;Jekyll博客的搭建&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;其他&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;继续学习摄影的的东西&lt;/li&gt;
-  &lt;li&gt;看一些小说&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 24 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/02/24/plan.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/02/24/plan.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
+    <title>Tomato sliu</title>
+    <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://toomatoo.github.io/</link>
+    <description>personal posts</description>
+    <pubDate>Wed, 17 Feb 2016 11:50:44 -0800</pubDate>
     
       <item>
         <title>Try Jekyll</title>
+        <link>https://toomatoo.github.io/jekyll/update/2015/02/22/try-jekyll.html</link>
+        <guid isPermaLink="true">https://toomatoo.github.io/jekyll/update/2015/02/22/try-jekyll.html</guid>
         <description>&lt;h2 id=&quot;jekyll&quot;&gt;使用Jekyll&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;
@@ -82,19 +52,24 @@
     &lt;p&gt;搭建到github pages&lt;/p&gt;
 
     &lt;p&gt;http://theloverz.me/tutorials/2013/08/24/use-github-and-jekyll-to-establish-blog/&lt;/p&gt;
+
+    &lt;p&gt;我现在所用的方法仍然是github repository的setting中直接启动autopage，然后修改其内容。
+ 而这里的效果是需要我本地build，然后push。应该并不是github和Jekyll&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;h2 id=&quot;jekyll-2&quot;&gt;定制Jekyll&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;myblog/index.html, myblog/_includes, myblog/_lay
+outs都是template。网站据此生成调用它们（footer，header）的完整页面。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;修改domain的过程中出现了错误，现在github.io页面直接指向toomatoo.me&lt;/li&gt;
+&lt;/ol&gt;
 </description>
-        <pubDate>Sun, 22 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/02/22/try-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/02/22/try-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
+        <pubDate>Sun, 22 Feb 2015 00:00:00 -0800</pubDate>
       </item>
     
   </channel>
