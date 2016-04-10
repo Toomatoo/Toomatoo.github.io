@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Try Jekyll | Tomato sliu</title>
+	<meta name="description" content="使用Jekyll      下载安装Jekyll    因为需要使用gem安装Jekyll，但是出现一些不安全提示： /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin14/rbcon...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://toomatoo.github.io/jekyll/update/2015/02/22/try-jekyll.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Tomato sliu" href="https://toomatoo.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Tomato sliu</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+<li>
+	<a href="https://toomatoo.github.io/feed.xml" title="Follow RSS feed">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:tomato.sliu@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/Toomatoo" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Try Jekyll</h1>
+    <p class="meta">
+    February 22, 2015
+    
+    </p>
+  </header>
+  <section class="post-content"><h2 id="jekyll">使用Jekyll</h2>
+<ol>
+  <li>
+    <p>下载安装Jekyll</p>
+
+    <p>因为需要使用gem安装Jekyll，但是出现一些不安全提示：
+ /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin14/rbconfig.rb:213: warning: Insecure world writable dir /usr in PATH, mode 040777
+ 之后通过硬盘修复得到了解决：
+ <img src="http://i.stack.imgur.com/OhmNJ.png" alt="image" /></p>
+  </li>
+  <li>
+    <p>使用Jekyll</p>
+
+    <p>基础操作是：添加post到_post文件夹中，我使用的文件格式是Markdown，所以命名格式是：</p>
+
+    <p><code class="highlighter-rouge">YEAR-MOUTH-DAY-DOCNAME.markdown</code></p>
+  </li>
+  <li>
+    <p>Post规范</p>
+
+    <p>1) 用—前后包住配置文件，之间写一些配置选项
+     layout: 文件形式，一般是post
+     title: 显示的title
+     data: 显示的时间
+     categories: 文件路径 <code class="highlighter-rouge">这里我还没有搞懂这个路径和url是怎么对应的</code></p>
+  </li>
+</ol>
+
+<h2 id="jekyll-1">配置Jekyll</h2>
+<ol>
+  <li>
+    <p>修改了config文件，但是却没有反应</p>
+
+    <p>重新开了一个jekyll blog，修改配置文件，文件便可以使用。并且持续修改配置文件，显示有效。
+ <code class="highlighter-rouge">不知道为什么之前的不可以</code>
+ （之后我由于添加了post，又出现了无法正常反映改变的情况，即使重新build。当我手动修了index之后，重新build，便可以显示了。同时<code class="highlighter-rouge">根目录中的index.html是一个template，可以通过修改，影响index，同时它可以是markdown，textile格式，之后再进行学习</code>）</p>
+  </li>
+  <li>
+    <p>搭建到github pages</p>
+
+    <p>http://theloverz.me/tutorials/2013/08/24/use-github-and-jekyll-to-establish-blog/</p>
+
+    <p>我现在所用的方法仍然是github repository的setting中直接启动autopage，然后修改其内容。
+ 而这里的效果是需要我本地build，然后push。应该并不是github和Jekyll</p>
+  </li>
+</ol>
+
+<h2 id="jekyll-2">定制Jekyll</h2>
+<ol>
+  <li>myblog/index.html, myblog/_includes, myblog/_lay
+outs都是template。网站据此生成调用它们（footer，header）的完整页面。</li>
+</ol>
+
+<h2 id="section">问题</h2>
+<ol>
+  <li>修改domain的过程中出现了错误，现在github.io页面直接指向toomatoo.me</li>
+</ol>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

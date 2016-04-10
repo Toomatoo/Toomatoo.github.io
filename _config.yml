@@ -1,0 +1,116 @@
+# SITE CONFIGURATION
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://toomatoo.github.io" # the base hostname & protocol for your site
+
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: Tomato sliu
+  avatar: avatar.png
+  gravatar: # Email MD5 hash
+  description: "personal posts" # used by search engines
+
+  # Header and footer text
+  header_text: >
+     <p>the only way to do great work is to love what you do. If you haven’t
+     found it yet, keep looking. Don’t settle. As with all matters of the heart,
+     you’ll know when you find it.</p>
+
+  header_text_feature_image:
+  footer_text: >
+   Powered by <a href="http://jekyllrb.com">Jekyll</a> with
+   <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+
+  # Icons
+  rss: true
+  email_address: tomato.sliu@gmail.com
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  github: "Toomatoo"
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter:
+  wordpress:
+  youtube:
+
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next: "Next"
+  str_prev: "Prev"
+  str_continue_reading: "Continue reading"
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: false
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Gems
+gems: [jekyll-paginate]
+
+# Resume
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Homer J. Simpson"
+resume_title:                   "Nuclear Safety Inspector"
+resume_contact_email:
+  "homerjsimpson@youremailaddress.com"
+
+# use "yes" to display the email contact button,
+# "no" to display an "I'm not looking for work" message,
+# or remove the resume_looking_for_work option entirely
+# to leave blank
+resume_looking_for_work:        "yes"
+
+# Decide which sections to use
+# comment out to hide
+resume_section_experience:      true
+resume_section_education:       true
+resume_section_projects:        true
+resume_section_skills:          true
+resume_section_recognition:     true
+resume_section_links:           true
+resume_section_associations:    true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/jglovier/resume-template"
+  resume_twitter_url:           "http://twitter.com/jglovier"
+  resume_dribbble_url:          "https://dribbble.com/jag"
+  # resume_facebook_url:          "insert Facebook URL here"
+  resume_linkedin_url:          "https://www.linkedin.com/in/joelglovier"
+  # resume_instagram_url:         "insert your Instagram URL here"
+  resume_website_url:           "http://joelglovier.com"
+
+# Design settings
+resume_theme:                   default

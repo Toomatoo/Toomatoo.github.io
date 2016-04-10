@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>16 | Tomato sliu</title>
+	<meta name="description" content="Spring Tutorial 16: BeanFactoryPostProcessor">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://toomatoo.github.io/jekyll/update/2016/03/22/1.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Tomato sliu" href="https://toomatoo.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Tomato sliu</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+<li>
+	<a href="https://toomatoo.github.io/feed.xml" title="Follow RSS feed">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:tomato.sliu@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/Toomatoo" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">16</h1>
+    <p class="meta">
+    March 22, 2016
+    
+    </p>
+  </header>
+  <section class="post-content"><h1 id="spring-tutorial-16-beanfactorypostprocessor">Spring Tutorial 16: BeanFactoryPostProcessor</h1>
+
+<p>For this time, I learnt a mechanism to write a class which takes actions when initializing a bean
+factory.</p>
+
+<h2 id="beanfactorypostprocessor">BeanFactoryPostProcessor</h2>
+
+<p>First, I write a new class of my BeanFactoryPostProcessor which implements <code class="highlighter-rouge">BeanFactoryPostProcessor</code>
+<code class="highlighter-rouge">java
+public class MyBeanFactoryPP implements BeanFactoryPostProcessor {
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        System.out.println("My Bean Factory Postprocessor called.");
+    }
+}
+</code>
+Then like a BeanPostProcessor, I just add a bean tag into the beans in the configure xml file.
+```xml</p>
+<bean class="me.tomato.MyBeanFactoryPP" />
+
+<div class="highlighter-rouge"><pre class="highlight"><code>And spring will automatically know it is a BeanPostProcessor because it implements `BeanPostProcessor`.
+
+The function for BeanPostProcessor is to take some actions when initializing a bean factory.
+
+One thing is to config the configure file before creating beans.
+
+## PropertyPlaceholderConfigurer
+
+As is said above, the configure file can also be initialized. In our example, there are some beans
+for points. The coordinates value are fixed in the previous definition. However, we can use a
+Bean Factory Processor to configure the beans.
+
+Here I use PropertyPlaceholderConfigurer which can take in a property configure file and put the
+values into beans.
+
+First write a new property file to store some value. For example, in a new file `pointsproperty.properties`,
+```text
+point.valueX = 0
+point.valueY = 0
+</code></pre>
+</div>
+<p>And prepare it for later use.</p>
+
+<p>Second we rewrite a point bean
+```xml</p>
+<bean id="point1" class="me.tomato.Point">
+      <property name="x" value="${point.valueX}" />
+      <property name="y" value="${point.valueY}" />
+</bean>
+<div class="highlighter-rouge"><pre class="highlight"><code>As is shown above, we can use the format `${valueName}` to refer some value in a properties configure
+file.
+
+Third, write a bean in `spring.xml` to indicate that there is a BeanPostProcessor for the factory.
+```xml
+&lt;bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"&gt;
+       &lt;property name="locations" value="pointsproperty.properties"/&gt;
+&lt;/bean&gt;
+</code></pre>
+</div>
+<p>As is shown above, <code class="highlighter-rouge">PropertyPlaceholderConfigurer</code> can link a properties file with this factory, and
+makes beans have the ability to use values of properties in the file. Add a property for it, and
+set the value the file path to the properties file.</p>
+
+<p>Then all the stuff is done, and the point1 bean can create a Point object with some values written
+in the properties file.</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
