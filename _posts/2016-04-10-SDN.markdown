@@ -60,7 +60,7 @@ nodes with large load.
 At a high level of abstraction, our system included three components shown figure
 below:
 
-![image]({{ site.url }}/img/posts/sdnarch.jpg)
+![image]({{ site.url }}/img/posts/sdnarch.jpg | width=300)
 
 1. Hadoop cluster with SDN. This part is mainly deployment of Hadoop
 master/slave nodes. For the sake of SDN, we replace normal routers and switches
@@ -117,4 +117,4 @@ on big data and large clusters.
 
 _Poster for final presentation_:
 
-![image]({{ site.url }}/img/posts/slide.pdf)
+[poster]({{ site.url }}/img/posts/slide.pdf | width=300)
