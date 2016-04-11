@@ -5,7 +5,7 @@
     <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://toomatoo.github.io/</link>
     <description>personal posts</description>
-    <pubDate>Mon, 11 Apr 2016 00:17:53 -0700</pubDate>
+    <pubDate>Mon, 11 Apr 2016 00:19:38 -0700</pubDate>
     
       <item>
         <title>Traffic Optimization for Hadoop based on SDN</title>
@@ -66,14 +66,7 @@ nodes with large load.&lt;/p&gt;
 &lt;p&gt;At a high level of abstraction, our system included three components shown figure
 below:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;![image](https://toomatoo.github.io/img/posts/sdnarch.jpg&lt;/td&gt;
-      &lt;td&gt;width=300)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;img src=&quot;https://toomatoo.github.io/img/posts/sdnarch.jpg =300x&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Hadoop cluster with SDN. This part is mainly deployment of Hadoop
@@ -132,14 +125,7 @@ on big data and large clusters.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Poster for final presentation&lt;/em&gt;:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;[poster](https://toomatoo.github.io/img/posts/slide.pdf&lt;/td&gt;
-      &lt;td&gt;width=300)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;a href=&quot;https://toomatoo.github.io/img/posts/slide.pdf =300x&quot;&gt;poster&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Feb 2015 00:00:00 -0800</pubDate>
       </item>
