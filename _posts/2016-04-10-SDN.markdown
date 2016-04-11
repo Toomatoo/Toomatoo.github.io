@@ -117,4 +117,4 @@ on big data and large clusters.
 
 _Poster for final presentation_:
 
-![poster]({{ site.url }}/img/posts/slide.pdf)
+[poster]({{ site.url }}/img/posts/slide.pdf)
