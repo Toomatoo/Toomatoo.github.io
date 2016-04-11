@@ -5,7 +5,7 @@
     <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://toomatoo.github.io/</link>
     <description>personal posts</description>
-    <pubDate>Mon, 11 Apr 2016 00:10:10 -0700</pubDate>
+    <pubDate>Mon, 11 Apr 2016 00:11:26 -0700</pubDate>
     
       <item>
         <title>Traffic Optimization for Hadoop based on SDN</title>
@@ -125,7 +125,7 @@ on big data and large clusters.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Poster for final presentation&lt;/em&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://toomatoo.github.io/img/posts/slide.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://toomatoo.github.io/img/posts/slide.pdf&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Feb 2015 00:00:00 -0800</pubDate>
       </item>
