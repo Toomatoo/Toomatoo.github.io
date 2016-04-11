@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Traffic Optimization for Hadoop based on SDN | Tomato sliu</title>
+	<meta name="description" content="personal posts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://toomatoo.github.io/2016-04-10-SDN.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Tomato sliu" href="https://toomatoo.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Tomato sliu</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			<li>
+				<a class="page-link" href="/resume">
+					Resume
+				</a>
+			</li>
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+<li>
+	<a href="https://toomatoo.github.io/feed.xml" title="Follow RSS feed">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:tomato.sliu@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/Toomatoo" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Traffic Optimization for Hadoop based on SDN</h1>
+    <p class="meta">
+    February 22, 2015
+    
+    </p>
+  </header>
+  <section class="post-content"><h1 id="background">Background</h1>
+
+<p>Hadoop is an open-source software framework for storing and running computing
+applications on a cluster of com- puters or hosts. Nowadays, many tasks of
+companies and research associations are accomplished through taking use of
+Hadoop. For the sake of efficiency and economy, people request a Hadoop cluster
+system with better performance. The performance of Hadoop relies on many factors.
+The basic factor is the algorithm of Hadoop, like how the mapper and reducer
+work and how the Hadoop controller distributes tasks to mappers/reducers.
+Since Hadoop is deployed on a cluster of computers, the network for the cluster
+obviously affects the transmission of data and control information. In intuition,
+even though the mappers and reducers can work very fast, the network with high
+latency and drop rate which cause a long transmission time will lead to bad
+performance in a Hadoop system.</p>
+
+<p>Our concern is focused on the network of Hadoop system. According to some basic
+experiment, the time of maps and reduces only occupies about 30% of the
+completion time for one Hadoop job. It means network transmission takes lots of
+time in a Hadoop job. The fact gives us an opportunity to improve the
+performance of Hadoop system.</p>
+
+<p>Network for Hadoop system is much different from the network we use for daily
+life. The features of Hadoop systems and applications make the network maintain
+some properties. We talk about the features of Hadoop and the network in the
+Section V . If we can catch and take use of the properties and information,
+there will be a more efficient network for Hadoop jobs whose completion time
+mainly comes from maps and reduces. This is why we consider about using SDN for
+the Hadoop cluster. Software-Defined Networking (SDN) is an approach to allow a
+network controller to manage the network scheduling in order to take fully use
+of the resources and improve the performance of the softwares running on the
+network. SDN decouples the decisions where the traffic is sent (control plane)
+from how to forward the traffic to the destination (data plane). As to Hadoop
+applications, SDN aims at a better traffic scheduling by considering how the
+mappers and reducers work and how the tasks are distributed.</p>
+
+<p>Our idea of traffic optimization for Hadoop based on SDN derives from FlowComb
+and Pythia. They build an SDN control module for the Hadoop cluster system which
+collect the information from running mappers and reducers and then adjust flow
+scheduling for the routers and switches in the network. Our system architechture
+is designed according to the same idea, but we made some modification and
+adjustment for some algorithm details and implementation of the system. It is
+mostly concerned about SDN for Hadoop that what kinds of information should be
+collected and how the network and flows are scheduled. On the whole, we collect
+information like the start/end time of hadoop map/recude tasks on each node and
+the activities of HDFS. Then the SDN controller analyses the information and
+updates a Load Graph held in the controller and deploy new flow scheduling rules
+to the switches and routers regularly. The Load Graph reflects the load level
+for the facilities in the network. Our goal is to schedule flows avoiding the
+nodes with large load.</p>
+
+<h2 id="architechture-of-hadoop-on-sdn">Architechture of Hadoop on SDN</h2>
+
+<p>At a high level of abstraction, our system included three components shown figure
+below:</p>
+
+<p><img src="https://toomatoo.github.io/images/posts/sdnarch.jpg" alt="image" /></p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

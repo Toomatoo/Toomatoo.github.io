@@ -5,7 +5,130 @@
     <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://toomatoo.github.io/</link>
     <description>personal posts</description>
-    <pubDate>Sun, 10 Apr 2016 23:22:19 -0700</pubDate>
+    <pubDate>Mon, 11 Apr 2016 00:10:10 -0700</pubDate>
+    
+      <item>
+        <title>Traffic Optimization for Hadoop based on SDN</title>
+        <link>https://toomatoo.github.io/jekyll/update/2015/02/22/SDN.html</link>
+        <guid isPermaLink="true">https://toomatoo.github.io/jekyll/update/2015/02/22/SDN.html</guid>
+        <description>&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;Hadoop is an open-source software framework for storing and running computing
+applications on a cluster of com- puters or hosts. Nowadays, many tasks of
+companies and research associations are accomplished through taking use of
+Hadoop. For the sake of efficiency and economy, people request a Hadoop cluster
+system with better performance. The performance of Hadoop relies on many factors.
+The basic factor is the algorithm of Hadoop, like how the mapper and reducer
+work and how the Hadoop controller distributes tasks to mappers/reducers.
+Since Hadoop is deployed on a cluster of computers, the network for the cluster
+obviously affects the transmission of data and control information. In intuition,
+even though the mappers and reducers can work very fast, the network with high
+latency and drop rate which cause a long transmission time will lead to bad
+performance in a Hadoop system.&lt;/p&gt;
+
+&lt;p&gt;Our concern is focused on the network of Hadoop system. According to some basic
+experiment, the time of maps and reduces only occupies about 30% of the
+completion time for one Hadoop job. It means network transmission takes lots of
+time in a Hadoop job. The fact gives us an opportunity to improve the
+performance of Hadoop system.&lt;/p&gt;
+
+&lt;p&gt;Network for Hadoop system is much different from the network we use for daily
+life. The features of Hadoop systems and applications make the network maintain
+some properties. We talk about the features of Hadoop and the network in the
+Section V . If we can catch and take use of the properties and information,
+there will be a more efficient network for Hadoop jobs whose completion time
+mainly comes from maps and reduces. This is why we consider about using SDN for
+the Hadoop cluster. Software-Defined Networking (SDN) is an approach to allow a
+network controller to manage the network scheduling in order to take fully use
+of the resources and improve the performance of the softwares running on the
+network. SDN decouples the decisions where the traffic is sent (control plane)
+from how to forward the traffic to the destination (data plane). As to Hadoop
+applications, SDN aims at a better traffic scheduling by considering how the
+mappers and reducers work and how the tasks are distributed.&lt;/p&gt;
+
+&lt;p&gt;Our idea of traffic optimization for Hadoop based on SDN derives from FlowComb
+and Pythia. They build an SDN control module for the Hadoop cluster system which
+collect the information from running mappers and reducers and then adjust flow
+scheduling for the routers and switches in the network. Our system architechture
+is designed according to the same idea, but we made some modification and
+adjustment for some algorithm details and implementation of the system. It is
+mostly concerned about SDN for Hadoop that what kinds of information should be
+collected and how the network and flows are scheduled. On the whole, we collect
+information like the start/end time of hadoop map/recude tasks on each node and
+the activities of HDFS. Then the SDN controller analyses the information and
+updates a Load Graph held in the controller and deploy new flow scheduling rules
+to the switches and routers regularly. The Load Graph reflects the load level
+for the facilities in the network. Our goal is to schedule flows avoiding the
+nodes with large load.&lt;/p&gt;
+
+&lt;h2 id=&quot;architechture-of-hadoop-on-sdn&quot;&gt;Architechture of Hadoop on SDN&lt;/h2&gt;
+
+&lt;p&gt;At a high level of abstraction, our system included three components shown figure
+below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://toomatoo.github.io/img/posts/sdnarch.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hadoop cluster with SDN. This part is mainly deployment of Hadoop
+master/slave nodes. For the sake of SDN, we replace normal routers and switches
+with open source switches.&lt;/li&gt;
+  &lt;li&gt;Instrument Process (we call it Auxiliary Process) runs on each node who
+collects information of the Hadoop node and sends it to the SDN control system.&lt;/li&gt;
+  &lt;li&gt;SDN control system. This module is the core of our system architecture. It
+consists of two parts: routing computation and flow allocation. After
+collecting the information from auxiliary processes, the control module executes
+routing computation to check if the topology of the network changes, then the
+flow allocation part will update flow allocation rules according to the
+LoadGraph which is gotten from the analysis of information collected.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-to-setup-experiments&quot;&gt;How to Setup Experiments&lt;/h2&gt;
+
+&lt;p&gt;The experimental setup can be concluded into three phases:
+1. Setting up virtual Hadoop clusters: Since we have no access to physical
+computing cluster, we utilize virtual nodes for setting up Hadoop clusters.
+&lt;strong&gt;Vagrant&lt;/strong&gt; is a powerful tools used to eliminate repeat work by setting up,
+booting and provision all virtual nodes with Vagrantfile
+(/vagrant/Vagrantfile). We allocate 8GB memory to the namenode and 1GB to
+datanodes. Besides, We select ubuntu server 14.04 as the system for these nodes
+and only install the GUI on the name node for furthur Hadoop jobs tracking.
+2. Setting up SDN network: For this phase, we use &lt;strong&gt;GNS32&lt;/strong&gt; to combine our virtual
+Hadoop clusters and &lt;strong&gt;Miniet&lt;/strong&gt;. Briefly, GNS3 is a network simulator that can
+provide a totally isolated network environment, Figure 4 shows one of our
+examples in GNS3 for Hadoop cluster testing. Mininet is also a great way to
+develop, share, and experiment with OpenFlow and Software Defined Networking
+systems. Through GNS3, we bind our virtual nodes as hosts in Miniet and we
+choose &lt;strong&gt;Fat-tree&lt;/strong&gt; as the network topology.
+3. Parallelized Development: We also notice that the underlying parallelization
+of our development. That is, we isolate SDN algorithm development from Hadoop
+cluster installation and testing. Specifically, we feed the Mininet with Hadoop
+job track logs available online and simulate the shuffle stage in Mininet host
+as precise as possible. By doing this, we can start developing SDN controller
+at the beginning of our project and don’t have to wait for Hadoop clusters to be
+set up.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We first point out the problem that shuffling take a large percentage of total
+running time of a Hadoop job, which due to insufficient usage of the network.
+Then, we implement a system based on Software-Define Network (SDN) to optimize
+network traffic for Hadoop shuffle stage. The idea is to build an SDN control
+module to adjust flow scheduling and achieve a more balanced flow allocation.
+The SDN controller collects the information from running mappers and reducers
+using an Auxiliary Process, and then updates a Load Graph which reflects the
+workload in the network. The flow scheduling strategy working with k-shortest
+paths routing algorithm dis- tributes different flows on the paths to the
+destination. We simulate the whole system with &lt;strong&gt;Cloudera&lt;/strong&gt;, &lt;strong&gt;Mininet&lt;/strong&gt;, &lt;strong&gt;GNS3&lt;/strong&gt;,
+&lt;strong&gt;OpenvSwitch&lt;/strong&gt; and other softwares. By utilizing this system, we create a set of
+Hadoop jobs and observe the task completion time. Compared to the normal network,
+our system based on SDN improves the overal performance of Hadoop cluster system
+on big data and large clusters.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Poster for final presentation&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://toomatoo.github.io/img/posts/slide.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Feb 2015 00:00:00 -0800</pubDate>
+      </item>
     
       <item>
         <title>Try Jekyll</title>
