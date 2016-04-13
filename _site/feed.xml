@@ -5,7 +5,7 @@
     <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://toomatoo.github.io/</link>
     <description>personal posts</description>
-    <pubDate>Mon, 11 Apr 2016 00:32:11 -0700</pubDate>
+    <pubDate>Wed, 13 Apr 2016 00:09:42 -0700</pubDate>
     
       <item>
         <title>Traffic Optimization for Hadoop based on SDN</title>
@@ -128,71 +128,6 @@ on big data and large clusters.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://toomatoo.github.io/img/posts/slide.pdf&quot;&gt;poster&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Apr 2016 00:00:00 -0700</pubDate>
-      </item>
-    
-      <item>
-        <title>Try Jekyll</title>
-        <link>https://toomatoo.github.io/jekyll/update/2015/02/22/try-jekyll.html</link>
-        <guid isPermaLink="true">https://toomatoo.github.io/jekyll/update/2015/02/22/try-jekyll.html</guid>
-        <description>&lt;h2 id=&quot;jekyll&quot;&gt;使用Jekyll&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;下载安装Jekyll&lt;/p&gt;
-
-    &lt;p&gt;因为需要使用gem安装Jekyll，但是出现一些不安全提示：
- /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin14/rbconfig.rb:213: warning: Insecure world writable dir /usr in PATH, mode 040777
- 之后通过硬盘修复得到了解决：
- &lt;img src=&quot;http://i.stack.imgur.com/OhmNJ.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用Jekyll&lt;/p&gt;
-
-    &lt;p&gt;基础操作是：添加post到_post文件夹中，我使用的文件格式是Markdown，所以命名格式是：&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MOUTH-DAY-DOCNAME.markdown&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Post规范&lt;/p&gt;
-
-    &lt;p&gt;1) 用—前后包住配置文件，之间写一些配置选项
-     layout: 文件形式，一般是post
-     title: 显示的title
-     data: 显示的时间
-     categories: 文件路径 &lt;code class=&quot;highlighter-rouge&quot;&gt;这里我还没有搞懂这个路径和url是怎么对应的&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;jekyll-1&quot;&gt;配置Jekyll&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;修改了config文件，但是却没有反应&lt;/p&gt;
-
-    &lt;p&gt;重新开了一个jekyll blog，修改配置文件，文件便可以使用。并且持续修改配置文件，显示有效。
- &lt;code class=&quot;highlighter-rouge&quot;&gt;不知道为什么之前的不可以&lt;/code&gt;
- （之后我由于添加了post，又出现了无法正常反映改变的情况，即使重新build。当我手动修了index之后，重新build，便可以显示了。同时&lt;code class=&quot;highlighter-rouge&quot;&gt;根目录中的index.html是一个template，可以通过修改，影响index，同时它可以是markdown，textile格式，之后再进行学习&lt;/code&gt;）&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;搭建到github pages&lt;/p&gt;
-
-    &lt;p&gt;http://theloverz.me/tutorials/2013/08/24/use-github-and-jekyll-to-establish-blog/&lt;/p&gt;
-
-    &lt;p&gt;我现在所用的方法仍然是github repository的setting中直接启动autopage，然后修改其内容。
- 而这里的效果是需要我本地build，然后push。应该并不是github和Jekyll&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;jekyll-2&quot;&gt;定制Jekyll&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;myblog/index.html, myblog/_includes, myblog/_lay
-outs都是template。网站据此生成调用它们（footer，header）的完整页面。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;修改domain的过程中出现了错误，现在github.io页面直接指向toomatoo.me&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sun, 22 Feb 2015 00:00:00 -0800</pubDate>
       </item>
     
   </channel>
