@@ -5,7 +5,52 @@
     <atom:link href="https://toomatoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://toomatoo.github.io/</link>
     <description>personal posts</description>
-    <pubDate>Wed, 13 Apr 2016 00:09:42 -0700</pubDate>
+    <pubDate>Fri, 15 Apr 2016 00:35:00 -0700</pubDate>
+    
+      <item>
+        <title>How to Learn a new Technology</title>
+        <link>https://toomatoo.github.io/jekyll/update/2016/04/14/learntech.html</link>
+        <guid isPermaLink="true">https://toomatoo.github.io/jekyll/update/2016/04/14/learntech.html</guid>
+        <description>&lt;p&gt;At this stage, with some graduate classes, I am supposed to learn some new
+technologies in systems, data mining and etc. How to learn a new technology is
+one of my concerns during learning.&lt;/p&gt;
+
+&lt;p&gt;For example, I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;reduce&lt;/code&gt; before, but &lt;code class=&quot;highlighter-rouge&quot;&gt;Spark&lt;/code&gt;. This quarter, in the
+big data course, I am supposed to implement algorithms in &lt;code class=&quot;highlighter-rouge&quot;&gt;PySpark&lt;/code&gt;. I can
+quickly dive into coding with it, because I am familiar with &lt;code class=&quot;highlighter-rouge&quot;&gt;Python&lt;/code&gt; and
+the logistics of MapReduce. However, I think I need more practice because
+algorithm design with MapReduce is much different with normal algorithm design.
+Under the situation like this, I found that even thought I am not very much
+familiar with &lt;code class=&quot;highlighter-rouge&quot;&gt;Spark&lt;/code&gt;, I can mostly learn by doing. On the other hand, sometimes,
+I am not very confident because I’ve not gone through details of &lt;code class=&quot;highlighter-rouge&quot;&gt;Spark&lt;/code&gt; or
+&lt;code class=&quot;highlighter-rouge&quot;&gt;PySpark&lt;/code&gt; which may make me miss something when coding. The action for this, I
+think, is to go through more details after a set of coding practice.&lt;/p&gt;
+
+&lt;p&gt;For other circumstance, it is not a same way to learn a new technology. For
+instance, I am completely a newbie of &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker&lt;/code&gt;. I’d better go through the
+official tutorial of it and learn about the idea, framework and code of it.
+Then I get the ability to build a system from scratch. After some experiment,
+it is very critical to look through tutorials or brief books when the thing is
+almost complete new for me, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Haskell&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker&lt;/code&gt;. And note: find
+&lt;strong&gt;official&lt;/strong&gt; tutorials and &lt;strong&gt;authoritative&lt;/strong&gt; brief books, which can give me a
+&lt;em&gt;shortcut&lt;/em&gt; for learning.&lt;/p&gt;
+
+&lt;p&gt;Therefore, there are two kinds of new technologies, familiar and not familiar.
+The ways for learning them is described above. Besides that, there are still
+some tips for myself. First, for the familiar things, do not stay in the comfort
+zone, try to learn and implement some general and useful things that is very
+important and not appear in the homework or something. For example, I am
+proficient in &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt;, but I clearly know that I do not know every thing of it,
+or I am not that familiar with some parts. Nowadays, I am trying to implement
+some general tools in &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt;, such as network clients/servers. Maybe later GUI
+in &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt; and etc. For another example, I’ve start to add code into a repo on
+&lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;. The repo contains many python data tools which is implemented for the
+sake of reuse.&lt;/p&gt;
+
+&lt;p&gt;The ways may be wrong or not efficient. Still trying…&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 00:00:00 -0700</pubDate>
+      </item>
     
       <item>
         <title>Traffic Optimization for Hadoop based on SDN</title>
